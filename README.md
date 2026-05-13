@@ -1,3 +1,39 @@
+# Project Portfolio
+A responsive React application for showcasing projects.
+User can add, search, and delete projects.
+Built with React and Bootstrap.
+
+# Features
+-Add Projects
+-Search Projects
+-Delete Projects
+-Responsive Design
+-Bootstrap Integration
+-Persistence with Local Storage
+
+# Tech Stack
+- React
+- Bootstrap
+- Local Storage
+
+# Project Structure
+- src/
+├── App.jsx
+├── main.jsx
+├── index.css
+└── components/
+├── Header.jsx
+├── SearchBar.jsx
+├── ProjectList.jsx
+├── ProjectCard.jsx
+└── ProjectForm.jsx
+
+# Installation
+npm install react react-dom & 
+npm install react-bootstrap
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
