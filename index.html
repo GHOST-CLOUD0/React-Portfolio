@@ -1,10 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-project</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Mark Kinyanjui — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Mark Kinyanjui, a full-stack developer in Nairobi, Kenya building fast, accessible web applications with React and Node.js."
+    />
+    <meta name="author" content="Mark Kinyanjui" />
+    <meta name="theme-color" content="#0b0a10" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mark Kinyanjui — Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Fast, accessible web applications built with React and Node.js."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Apply the stored theme before first paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

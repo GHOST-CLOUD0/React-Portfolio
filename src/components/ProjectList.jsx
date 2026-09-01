@@ -1,24 +1,23 @@
-import React from 'react';
 import ProjectCard from './ProjectCard';
 
-export default function ProjectList({ projects, onDelete }) {
+export default function ProjectList({ projects = [], onReset }) {
+  if (projects.length === 0) {
     return (
-        <div className='container my-4'>
-            <div className="row">
-                {projects.length > 0 ? (
-                    projects.map((project) => (
-                        <div key={project.id} className="col-md-6 mb-4">
-                        <ProjectCard project={project} 
-                        onDelete={onDelete}/>
-                        </div>
-                    ))
-                ) : (
-                    <div className="col-12 text-center">
-                        <p>No projects found.</p>
-                    </div>
-                )}
-            </div>
-        </div>
-    )
+      <div className="empty card">
+        <h3>No matching projects</h3>
+        <p>Try a different keyword or clear the filters to see everything.</p>
+        <button type="button" className="btn btn--ghost btn--sm" onClick={onReset}>
+          Clear filters
+        </button>
+      </div>
+    );
+  }
 
+  return (
+    <div className="grid grid--2">
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+    </div>
+  );
 }
