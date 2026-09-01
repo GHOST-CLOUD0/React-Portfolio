@@ -8,4 +8,9 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    host: true,
+    // Allow sandbox / tunnel preview hosts in addition to localhost.
+    allowedHosts: ['.e2b.app', '.localhost'],
+  },
 })
